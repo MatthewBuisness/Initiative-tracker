@@ -37,9 +37,9 @@ while True:
                 if newAdditionSplit[0].isalpha() and newAdditionSplit[1].isdigit():
                     newAdditionTuple=(newAdditionSplit[0],newAdditionSplit[1])
                     Entities.append(newAdditionTuple)
+                    Entities.sort(key = lambda x: int(x[1]),reverse=True)
                 else:
                     print("You did not format your entry correctly and your addition was not recorded")
-                    Entities.sort(key = lambda x: int(x[1]),reverse=True)
     elif len(throwawayinput)==0:
         continue 
         
