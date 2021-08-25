@@ -23,7 +23,7 @@ while True:
     tempTuple=Entities[count]
     print("it is",tempTuple[0],"turn!")
     count+=1
-    throwawayinput=input("Hit enter to go to the next, or type add and hit enter to add a new entity")
+    throwawayinput=input("Hit enter to go to the next, type add and hit enter to add a new entity, or type dead if the entity whos turn it is is now dead")
     if "add" in throwawayinput.lower():
             newAddition=input("Enter the name and the roll then hit enter, type 'done'when you dont need to add more Example 'RedDragon-15'")
             if "done" in newAddition.lower():
@@ -40,8 +40,12 @@ while True:
                     Entities.sort(key = lambda x: int(x[1]),reverse=True)
                 else:
                     print("You did not format your entry correctly and your addition was not recorded")
+    elif "dead" in throwawayinput.lower():
+        Entities.pop(count)
     elif len(throwawayinput)==0:
         continue 
+    else:
+        print("you types something that was not a recognize command, procceeding to next intiiative )
         
         
         
